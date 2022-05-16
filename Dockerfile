@@ -22,10 +22,12 @@ gdb \
 gdb-multiarch \
 python3 python3-pip python3-dev \
 libssl-dev && \
-pip3 install pwntools ROPgadget && \
+pip3 install pwntools ROPgadget capstone unicorn ropper keystone-engine && \
 mkdir tools && cd tools && \
 # git clone https://github.com/radare/radare2 && cd radare2 && sys/install.sh && cd .. && \
 # git clone https://github.com/niklasb/libc-database && cd libc-database && ./get ubuntu && cd .. && \
-wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py && \
-echo source ~/.gdbinit-gef.py >> ~/.gdbinit && \
+# git clone https://github.com/hugsy/gef.git && \
+# bash -c "$(curl -fsSL http://gef.blah.cat/sh)" \
+git clone https://github.com/pwndbg/pwndbg && cd pwndbg && \
+./setup.sh && \
 gem install one_gadget
